@@ -9,7 +9,7 @@
 <% end %>
 <% @list.bookmarks.each do |bookmark| %>
 <div class="cards">
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?movie)">
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bookmark.movie.poster_url  %>'))">
 <h2><%= bookmark.movie.title%></h2>
 </div>
 <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
@@ -23,4 +23,5 @@
 <%= link_to new_list_bookmark_path(@list) do %>
  <i class="fas fa-plus-square btn-light"></i>
 <% end %>
+
 </div>
